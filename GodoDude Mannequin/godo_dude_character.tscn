@@ -245,7 +245,7 @@ material = ExtResource("3_ie47r")
 [node name="Total_Upper_Body" type="Position3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets"]
 
 [node name="Body_Main_Bone_ALL" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body"]
-transform = Transform3D(0.978656, 0.0513019, 0.198998, -1.02445e-07, 0.968339, -0.249639, -0.205505, 0.24431, 0.947671, -4.17844e-10, 1.00012, -0.0504204)
+transform = Transform3D(0.978656, 0.051302, 0.198998, -1.02445e-07, 0.968339, -0.249639, -0.205505, 0.24431, 0.947671, -4.17844e-10, 1.00012, -0.0504204)
 inner_radius = 0.225755
 outer_radius = 0.275653
 material = ExtResource("3_ie47r")
