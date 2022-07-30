@@ -2,7 +2,7 @@
 A Mannequin with a full body Rig and an IK made directly in Godot Engine 4
 
 For more infos follow me on Twitter: https://twitter.com/WuotanStudios
-
+or follow the project directly on Twitter: https://twitter.com/hashtag/GodoDudeMannequin?src=hashtag_click
 
 The goal is to create the first fully rigged model with an IK Setup made directly in the Godot 4 Engine, inclusive Animations.
 This project shall grow bigger, by optimizing the IK System, add other character types (also with rig + IK), and many many animations.
