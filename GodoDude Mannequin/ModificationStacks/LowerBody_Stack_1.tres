@@ -1,0 +1,68 @@
+[gd_resource type="SkeletonModificationStack3D" load_steps=10 format=3 uid="uid://bd5u3va7lyygt"]
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_hvg7x"]
+bone_name = "thigh.L"
+bone_index = 57
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/Both_Knees/Both_Knee_Targets/Left_Knee/Target_Graph2")
+lock_rotation_plane = 0
+additional_rotation = Vector3(0, 180, 0)
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_y6n0m"]
+bone_name = "thigh.R"
+bone_index = 62
+target_nodepath = NodePath("IK_Targets/Total_Base_All_Targets/Feets_Complete/Both_Knee_Targets/Right_Knee/Target_Graph2")
+additional_rotation = Vector3(0, -180, 0)
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_y56a8"]
+bone_name = "shin.L"
+bone_index = 58
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/CSGBox3D/Both_Feets_Bottom/Left/Left_Foot_Target")
+lock_rotation_plane = 0
+additional_rotation = Vector3(0, 180, 0)
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_t7aly"]
+bone_name = "shin.R"
+bone_index = 63
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/CSGBox3D/Both_Feets_Bottom/Right/Right_Foot_Target")
+additional_rotation = Vector3(0, 180, 0)
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_e40j6"]
+bone_name = "foot.R"
+bone_index = 64
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/CSGBox3D/Both_Feets_Bottom/Right/Right_Feet_Tip/Right_Feet_Target_1")
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_tf4is"]
+bone_name = "toe.R"
+bone_index = 65
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/CSGBox3D/Both_Feets_Bottom/Right/Right_Feet_Tip/Right_Feet_Target_1/Right_Feet_Target_2")
+additional_rotation = Vector3(0, 180, 0)
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_6p63m"]
+bone_name = "foot.L"
+bone_index = 59
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/CSGBox3D/Both_Feets_Bottom/Left/Left_Feet_Tip/Left_Feet_Target_1")
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_iu52u"]
+bone_name = "toe.L"
+bone_index = 60
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/CSGBox3D/Both_Feets_Bottom/Left/Left_Feet_Tip/Left_Feet_Target_1/Left_Feet_Target_2")
+additional_rotation = Vector3(0, 180, 0)
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_a6lgw"]
+bone_name = "thigh.R"
+bone_index = 62
+target_nodepath = NodePath("IK_Targets/Feets_Complete/Total_Base_All_Targets/Both_Knees/Both_Knee_Targets/Right_Knee/Target_Graph2")
+additional_rotation = Vector3(0, 180, 0)
+
+[resource]
+enabled = true
+modification_count = 9
+modifications/0 = SubResource("SkeletonModification3DLookAt_hvg7x")
+modifications/1 = SubResource("SkeletonModification3DLookAt_y6n0m")
+modifications/2 = SubResource("SkeletonModification3DLookAt_y56a8")
+modifications/3 = SubResource("SkeletonModification3DLookAt_t7aly")
+modifications/4 = SubResource("SkeletonModification3DLookAt_e40j6")
+modifications/5 = SubResource("SkeletonModification3DLookAt_tf4is")
+modifications/6 = SubResource("SkeletonModification3DLookAt_6p63m")
+modifications/7 = SubResource("SkeletonModification3DLookAt_iu52u")
+modifications/8 = SubResource("SkeletonModification3DLookAt_a6lgw")

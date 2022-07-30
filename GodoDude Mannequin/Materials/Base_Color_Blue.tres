@@ -1,0 +1,28 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dmpfh8ieymkx6"]
+
+[ext_resource type="Texture2D" uid="uid://bvx44gfoybit4" path="res://Textures/Texture_Color.png" id="1_8qxaj"]
+[ext_resource type="Texture2D" uid="uid://c3g3t2p3beuw3" path="res://Textures/Roughness.png" id="2_yfdo5"]
+
+[resource]
+resource_name = "GodotBlueMetal"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.27451, 0.478431, 0.705882, 1)
+albedo_texture = ExtResource("1_8qxaj")
+metallic = 0.19
+metallic_specular = 0.57
+metallic_texture = ExtResource("2_yfdo5")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("2_yfdo5")
+roughness_texture_channel = 4
+normal_scale = 0.11
+rim = 0.02
+rim_tint = 0.26
+clearcoat_enabled = true
+clearcoat = 0.35
+clearcoat_roughness = 1.0
+clearcoat_texture = ExtResource("1_8qxaj")
+anisotropy_enabled = true
+anisotropy = 0.04
+anisotropy_flowmap = ExtResource("2_yfdo5")
+ao_enabled = true
