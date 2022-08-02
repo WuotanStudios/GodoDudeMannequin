@@ -5,10 +5,13 @@ extends Skeleton3D
 #Exports the "IK Script Active" Button into the Editor inspector
 @export_enum("IK Tools Active", "IK Tools Inactive") var IK_Script_Active = 1
 
+@export_flags("Test") var Hallo = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_set_Body_Main_Bone_ALL_loc_rot_scale_data()
+	#_set_Body_Main_Bone_ALL_loc_rot_scale_data()
+	
+	_setup_max_bone_axial_rot() #testrun
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,14 +21,18 @@ func _process(delta) -> void:
 	if IK_Script_Active == 1: return
 	
 	if IK_Script_Active == 0:
-		var get_tool_for_spine_zero = $IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL.get_global_transform()
-		var make_it_local_for_pose = world_transform_to_global_pose(get_tool_for_spine_zero)
-		set_bone_global_pose_override(0, make_it_local_for_pose, 1, true)
-
+		_get_Body_Main_Bone_ALL_loc_rot_scale_data()
 		
-		#global_pose_to_local_pose(0, $IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL.get_global_transform())
 		
 	else: pass
+
+
+
+#test function to setup the bones maximum axial rotation
+func _setup_max_bone_axial_rot(): 
+	var test_local_pos_data = global_pose_to_world_transform(get_bone_global_pose(57)) 
+	
+	print("test_local_pos_data: ", test_local_pos_data)
 
 
 
@@ -34,7 +41,12 @@ func _process(delta) -> void:
 
 
 func _get_Body_Main_Bone_ALL_loc_rot_scale_data():
-	pass
+	
+	var get_tool_for_spine_zero = $IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL.get_global_transform()
+	var make_it_local_for_pose = world_transform_to_global_pose(get_tool_for_spine_zero)
+	set_bone_global_pose_override(0, make_it_local_for_pose, 1, true)
+	
+
 
 
 #gets the Base Bone position, rotation, scale, and get the global data out of it, and use these datas for the Body_Main_Bone_All tool in the 3d editor
