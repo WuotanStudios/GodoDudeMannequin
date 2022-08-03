@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://hsefbvcc8bbp"]
+[gd_scene load_steps=35 format=3 uid="uid://hsefbvcc8bbp"]
 
 [ext_resource type="PackedScene" uid="uid://u0343aumvhfh" path="res://gltf/GodoDude_Rigged_1.gltf" id="1_w0tqc"]
 [ext_resource type="Script" path="res://Skeleton3D.gd" id="2_0ra0b"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c3g3t2p3beuw3" path="res://Textures/Roughness.png" id="3_bpjtu"]
 [ext_resource type="Material" uid="uid://kgr5vo7i4vsd" path="res://Materials/Controller_IK_bright_green.tres" id="3_ie47r"]
 [ext_resource type="Material" uid="uid://bp5c4g5flyp2h" path="res://Materials/Controller_IK_bright_yellow.tres" id="6_cgxpr"]
+[ext_resource type="Script" path="res://Assign_To_Bone.gd" id="8_8auk7"]
 
 [sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_hvg7x"]
 bone_name = "thigh.L"
@@ -90,27 +91,40 @@ joint_data/3/bone_index = 3
 joint_data/3/ccdik_axis = 0
 joint_data/3/enable_joint_constraint = false
 
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_n5vxt"]
+target_nodepath = NodePath("IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Neck_Target_fixed_on_bone/Neck_Target_tip")
+tip_nodepath = NodePath("IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Neck_Target_fixed_on_bone/Neck_Target_goal")
+ccdik_data_chain_length = 2
+joint_data/0/bone_name = "spine.004"
+joint_data/0/bone_index = 4
+joint_data/0/ccdik_axis = 0
+joint_data/0/enable_joint_constraint = false
+joint_data/1/bone_name = "spine.005"
+joint_data/1/bone_index = 5
+joint_data/1/ccdik_axis = 0
+joint_data/1/enable_joint_constraint = false
+
+[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_jwy00"]
+bone_name = "spine.006"
+bone_index = 6
+target_nodepath = NodePath("IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Head_look_at_target")
+additional_rotation = Vector3(90, 180, 0)
+
 [sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_l4mvr"]
 enabled = true
-modification_count = 1
+modification_count = 3
 modifications/0 = SubResource("SkeletonModification3DCCDIK_ass68")
+modifications/1 = SubResource("SkeletonModification3DCCDIK_n5vxt")
+modifications/2 = SubResource("SkeletonModification3DLookAt_jwy00")
 
 [sub_resource type="SkeletonModification3DStackHolder" id="SkeletonModification3DStackHolder_5ovy3"]
 held_modification_stack = SubResource("SkeletonModificationStack3D_l4mvr")
 
-[sub_resource type="SkeletonModification3DLookAt" id="SkeletonModification3DLookAt_7io2x"]
-bone_name = "spine.006"
-bone_index = 6
-target_nodepath = NodePath("IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Head_look_at_target")
-lock_rotation_to_plane = true
-additional_rotation = Vector3(90, 180, 0)
-
 [sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_5osap"]
 enabled = true
-modification_count = 3
+modification_count = 2
 modifications/0 = SubResource("SkeletonModification3DStackHolder_jt47w")
 modifications/1 = SubResource("SkeletonModification3DStackHolder_5ovy3")
-modifications/2 = SubResource("SkeletonModification3DLookAt_7io2x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr2xo"]
 albedo_texture = ExtResource("2_vxwx8")
@@ -161,6 +175,10 @@ emission = Color(0.956863, 0.956863, 0, 1)
 emission_energy = 0.38
 rim_enabled = true
 rim_tint = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7jda"]
+transparency = 1
+albedo_color = Color(0.780392, 1, 0.713726, 0)
 
 [node name="GodoDude_Character" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -302,7 +320,7 @@ outer_radius = 0.288327
 material = SubResource("StandardMaterial3D_bh5ig")
 
 [node name="Spine_Deformer_Tip" type="CSGBox3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL"]
-transform = Transform3D(0.999965, 0.000909421, 0.00766128, 0.00192606, -0.991008, -0.133756, 0.00747084, 0.133766, -0.990981, -0.00547271, 0.862093, 0.617706)
+transform = Transform3D(0.999965, 0.000909421, 0.00766128, 0.00192606, -0.991008, -0.133756, 0.00747086, 0.133766, -0.990983, -0.00551837, 0.756851, 0.650952)
 size = Vector3(0.152, 0.152, 0.152)
 material = SubResource("StandardMaterial3D_sooyp")
 
@@ -315,10 +333,36 @@ material = SubResource("StandardMaterial3D_sooyp")
 metadata/_edit_lock_ = true
 
 [node name="Head_look_at_target" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL"]
-transform = Transform3D(0.999954, -0.00578337, 0.00305905, 0.00881636, 0.212624, -0.384975, 0.00400002, 0.977118, 0.0837901, -0.000726111, 0.899564, 0.81062)
+transform = Transform3D(0.999954, -0.00578335, 0.00305905, 0.00881636, 0.212624, -0.384975, 0.00400002, 0.977118, 0.0837901, -0.000560402, 0.847819, 0.80178)
 inner_radius = 0.145998
 outer_radius = 0.220489
 sides = 4
 material = SubResource("StandardMaterial3D_ff1rf")
+
+[node name="Neck_Target_fixed_on_bone" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL"]
+transform = Transform3D(1, -7.91624e-09, 2.3935e-07, 1.27475e-07, 0.86262, -0.505855, -2.007e-07, 0.505855, 0.862619, 1.74623e-10, 0.664927, -0.0548363)
+inner_radius = 0.0898079
+outer_radius = 0.139808
+material = SubResource("StandardMaterial3D_d7jda")
+script = ExtResource("8_8auk7")
+bone_name = "spine.004"
+get_bone_id = 4
+Bone_ID = 4
+metadata/_edit_lock_ = true
+
+[node name="Neck_Target_goal" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Neck_Target_fixed_on_bone"]
+transform = Transform3D(1, 4.65661e-10, 1.49012e-08, -7.68341e-09, 0.825989, -0.563682, 2.32831e-09, 0.563682, 0.825992, -0.000620663, 0.453784, 0.163317)
+visible = false
+inner_radius = 0.0208937
+outer_radius = 0.0641558
+material = ExtResource("3_ie47r")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Neck_Target_tip" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Neck_Target_fixed_on_bone"]
+transform = Transform3D(1, 2.79397e-09, 2.04891e-08, -3.72529e-09, 0.98924, 0.146287, 6.98492e-09, -0.146286, 0.989242, -0.00502426, 0.792923, 0.15542)
+inner_radius = 0.081034
+outer_radius = 0.110189
+material = ExtResource("3_ie47r")
 
 [editable path="GodoDude_Rigged_1"]
