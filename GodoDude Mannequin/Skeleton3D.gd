@@ -28,14 +28,17 @@ func _ready():
 func _process(delta) -> void:
 	if IK_Script_Active == 1: return
 	
-	if Assign_data_from_target_to_Bone == 1: _copy_data_from_BoneID_to_target_Node3D()
-	
-	_use_bone_name_to_find_bone_index_nr()
-	return
+	if Assign_data_from_target_to_Bone == 1: 
+		#print("Script Aktiv"); 
+		_copy_data_from_BoneID_to_target_Node3D()
+		_use_bone_name_to_find_bone_index_nr()
+		return
 	
 	
 	if IK_Script_Active == 0:
 		_get_Body_Main_Bone_ALL_loc_rot_scale_data()
+		_use_bone_name_to_find_bone_index_nr()
+		return
 		
 	else: pass
 
@@ -50,6 +53,7 @@ func _setup_max_bone_axial_rot(_delta):
 func _get_Body_Main_Bone_ALL_loc_rot_scale_data():
 	var get_tool_for_spine_zero = $IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL.get_global_transform()
 	var make_it_local_for_pose = world_transform_to_global_pose(get_tool_for_spine_zero)
+	#print("Position Main Bone: ", make_it_local_for_pose)
 	set_bone_global_pose_override(0, make_it_local_for_pose, 1, true)
 
 
