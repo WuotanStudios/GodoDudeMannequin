@@ -5,13 +5,18 @@ extends Skeleton3D
 #Exports the "IK Script Active" Button into the Editor inspector
 @export_enum("IK Tools Active", "IK Tools Inactive") var IK_Script_Active = 1
 
-@export_flags("Test") var Hallo = 1
+@export_flags("Reset_now") var Reset_xy = 0
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#_set_Body_Main_Bone_ALL_loc_rot_scale_data()
 	
-	_setup_max_bone_axial_rot() #testrun
+	#_setup_max_bone_axial_rot() #testrun
+	
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +24,8 @@ func _ready():
 #after that the Body_Main_Bone_ALL in the 3d editor will change the position to the main_bone "spine"(Bone Nr.0)
 func _process(delta) -> void:
 	if IK_Script_Active == 1: return
+	
+	if Reset_xy == 1: _setup_max_bone_axial_rot(delta); Reset_xy = 0
 	
 	if IK_Script_Active == 0:
 		_get_Body_Main_Bone_ALL_loc_rot_scale_data()
@@ -28,11 +35,14 @@ func _process(delta) -> void:
 
 
 
-#test function to setup the bones maximum axial rotation
-func _setup_max_bone_axial_rot(): 
-	var test_local_pos_data = global_pose_to_world_transform(get_bone_global_pose(57)) 
+
+func _setup_max_bone_axial_rot(_delta): 
+	#var test_local_pos_data = global_pose_to_world_transform(get_bone_global_pose(57)) 
 	
+	
+	var test_local_pos_data = get_bone_global_pose(57)
 	print("test_local_pos_data: ", test_local_pos_data)
+
 
 
 

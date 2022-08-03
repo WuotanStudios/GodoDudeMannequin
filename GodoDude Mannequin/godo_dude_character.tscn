@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://hsefbvcc8bbp"]
+[gd_scene load_steps=30 format=3 uid="uid://hsefbvcc8bbp"]
 
 [ext_resource type="PackedScene" uid="uid://u0343aumvhfh" path="res://gltf/GodoDude_Rigged_1.gltf" id="1_w0tqc"]
 [ext_resource type="Script" path="res://Skeleton3D.gd" id="2_0ra0b"]
@@ -68,10 +68,43 @@ modifications/8 = SubResource("SkeletonModification3DLookAt_a6lgw")
 [sub_resource type="SkeletonModification3DStackHolder" id="SkeletonModification3DStackHolder_jt47w"]
 held_modification_stack = SubResource("SkeletonModificationStack3D_0mqfe")
 
-[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_5osap"]
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_ass68"]
+target_nodepath = NodePath("IK_Targets/Total_Upper_Body/Spine_Deformer_Tip/Spine_Deformer_Goal")
+tip_nodepath = NodePath("IK_Targets/Total_Upper_Body/Spine_Deformer_Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_name = "spine"
+joint_data/0/bone_index = 0
+joint_data/0/ccdik_axis = 0
+joint_data/0/enable_joint_constraint = true
+joint_data/0/joint_constraint_angle_min = 0.0
+joint_data/0/joint_constraint_angle_max = 360.0
+joint_data/0/joint_constraint_angles_invert = false
+joint_data/1/bone_name = "spine.001"
+joint_data/1/bone_index = 1
+joint_data/1/ccdik_axis = 0
+joint_data/1/enable_joint_constraint = false
+joint_data/2/bone_name = "spine.002"
+joint_data/2/bone_index = 2
+joint_data/2/ccdik_axis = 0
+joint_data/2/enable_joint_constraint = false
+joint_data/3/bone_name = "spine.003"
+joint_data/3/bone_index = 3
+joint_data/3/ccdik_axis = 0
+joint_data/3/enable_joint_constraint = false
+
+[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_l4mvr"]
 enabled = true
 modification_count = 1
+modifications/0 = SubResource("SkeletonModification3DCCDIK_ass68")
+
+[sub_resource type="SkeletonModification3DStackHolder" id="SkeletonModification3DStackHolder_5ovy3"]
+held_modification_stack = SubResource("SkeletonModificationStack3D_l4mvr")
+
+[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_5osap"]
+enabled = true
+modification_count = 2
 modifications/0 = SubResource("SkeletonModification3DStackHolder_jt47w")
+modifications/1 = SubResource("SkeletonModification3DStackHolder_5ovy3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr2xo"]
 albedo_texture = ExtResource("2_vxwx8")
@@ -111,6 +144,10 @@ heightmap_scale = 0.162
 transparency = 1
 albedo_color = Color(0, 1, 0.105882, 0.788235)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sooyp"]
+transparency = 1
+albedo_color = Color(1, 0.964706, 0.454902, 0.788235)
+
 [node name="GodoDude_Character" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
@@ -118,7 +155,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="GodoDude_Rigged_1/metarig" index="0"]
-transform = Transform3D(1, 0, -6.39488e-14, 0, 1, 0, 6.39488e-14, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/position = Vector3(-4.17844e-10, 1.00012, -0.0504204)
 bones/0/rotation = Quaternion(0.125146, 0.102484, -0.0129978, 0.986745)
 bones/0/scale = Vector3(1, 1, 1)
@@ -129,7 +166,6 @@ bones/60/scale = Vector3(1, 1, 1)
 modification_stack = SubResource("SkeletonModificationStack3D_5osap")
 script = ExtResource("2_0ra0b")
 IK_Script_Active = 0
-Hallo = 0
 
 [node name="DummyHull" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_qr2xo")
@@ -246,5 +282,16 @@ transform = Transform3D(0.99997, 0.00192602, 0.00747061, -1.02445e-07, 0.968339,
 inner_radius = 0.253617
 outer_radius = 0.288327
 material = SubResource("StandardMaterial3D_bh5ig")
+
+[node name="Spine_Deformer_Tip" type="CSGBox3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body"]
+transform = Transform3D(0.999998, -7.64273e-15, 1.74845e-07, 7.64273e-15, -0.999998, -8.74226e-08, 1.74845e-07, 8.74226e-08, -0.999998, 0.000802563, 1.70346, 0.707187)
+size = Vector3(0.4, 0.00566438, 0.4)
+material = SubResource("StandardMaterial3D_sooyp")
+
+[node name="Spine_Deformer_Goal" type="CSGSphere3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Spine_Deformer_Tip"]
+transform = Transform3D(1, -7.54817e-15, 9.23706e-14, 7.54817e-15, 1, 2.84217e-14, -9.23706e-14, -2.84217e-14, 1, -0.000802621, -0.0295663, -0.0589741)
+radius = 0.117968
+radial_segments = 6
+material = SubResource("StandardMaterial3D_sooyp")
 
 [editable path="GodoDude_Rigged_1"]
