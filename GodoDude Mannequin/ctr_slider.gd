@@ -2,10 +2,12 @@
 extends CSGTorus3D
 
 @export_enum("IK Tools Inactive", "IK Tools Active") var IK_Script_Active = 1
-@export var rotate_y : float = 0.0
+var rotate_y : float = 0.0
 
 
 func _process(delta):
+	var temp_rotation = get_rotation()
+	rotate_y = temp_rotation.y
 	
 	if IK_Script_Active == 1:
 		

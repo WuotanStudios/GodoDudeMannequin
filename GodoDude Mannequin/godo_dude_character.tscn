@@ -750,7 +750,7 @@ bone_name = "hand.L"
 bone_idx = 10
 
 [node name="Left_Arm_Hand_Rot_ctrl" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/Attachm_LeftHand"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, -2.64697e-23, 0, 0.999999, 0, 2.64697e-23, 0, 1, 0, 0, 0)
 inner_radius = 0.0397786
 outer_radius = 0.0563489
 material = ExtResource("3_ie47r")
@@ -774,7 +774,7 @@ material = ExtResource("3_ie47r")
 script = ExtResource("10_8cwru")
 
 [node name="Right_Hand_Bow_ctrl" type="CSGBox3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/Attachm_RightHand/Right_Arm_Hand_Rot_ctrl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.038, 0)
 size = Vector3(0.01, 0.05, 0.01)
 material = SubResource("StandardMaterial3D_oo120")
 script = ExtResource("11_7koey")
