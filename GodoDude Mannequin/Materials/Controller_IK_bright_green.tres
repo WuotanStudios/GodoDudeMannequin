@@ -3,3 +3,5 @@
 [resource]
 transparency = 1
 albedo_color = Color(0.780392, 1, 0.713726, 0.788235)
+rim_enabled = true
+rim = 0.37
