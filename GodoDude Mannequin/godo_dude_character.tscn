@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://hsefbvcc8bbp"]
+[gd_scene load_steps=66 format=3 uid="uid://hsefbvcc8bbp"]
 
 [ext_resource type="PackedScene" uid="uid://u0343aumvhfh" path="res://gltf/GodoDude_Rigged_1.gltf" id="1_w0tqc"]
 [ext_resource type="Script" path="res://Skeleton3D.gd" id="2_0ra0b"]
@@ -363,76 +363,54 @@ _data = {
 "right_hand_rot_right": SubResource("Animation_w5cdl")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ad5ir"]
-animation = &"left_hand_normal_pose"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rcfd8"]
-animation = &"left_hand_bow_forward"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hk2pt"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3xykw"]
 animation = &"left_hand_bow_backwards"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hnd3c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_05y4g"]
+animation = &"left_hand_bow_forward"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lc4ji"]
+animation = &"left_hand_normal_pose"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_mgslb"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_3xykw")
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_05y4g")
+blend_point_1/pos = 1.0
+blend_point_2/node = SubResource("AnimationNodeAnimation_lc4ji")
+blend_point_2/pos = 0.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dv80w"]
+animation = &"left_hand_normal_pose"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8w36a"]
 animation = &"left_hand_rot_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kcmbk"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vqbq1"]
 animation = &"left_hand_rot_left"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_7ggs3"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_ad5ir")
-blend_point_0/pos = Vector2(0, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_rcfd8")
-blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_hk2pt")
-blend_point_2/pos = Vector2(0, -1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_hnd3c")
-blend_point_3/pos = Vector2(1.6, 0)
-blend_point_4/node = SubResource("AnimationNodeAnimation_kcmbk")
-blend_point_4/pos = Vector2(-3.7, 0)
-min_space = Vector2(-3.7, -1)
-max_space = Vector2(1.6, 1)
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ichri"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_dv80w")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_8w36a")
+blend_point_1/pos = 1.6
+blend_point_2/node = SubResource("AnimationNodeAnimation_vqbq1")
+blend_point_2/pos = -3.6
+min_space = -3.6
+max_space = 1.6
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_pi72s"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kuxod"]
-animation = &"left_hand_normal_pose"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4cl2b"]
-animation = &"right_hand_bow_forward"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fr1sn"]
-animation = &"right_hand_bow_backwards"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_acyja"]
-animation = &"right_hand_rot_left"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3rbp1"]
-animation = &"right_hand_rot_right"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_eokdn"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_kuxod")
-blend_point_0/pos = Vector2(0, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_4cl2b")
-blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_fr1sn")
-blend_point_2/pos = Vector2(0, -0.9)
-blend_point_3/node = SubResource("AnimationNodeAnimation_acyja")
-blend_point_3/pos = Vector2(-1.6, 0)
-blend_point_4/node = SubResource("AnimationNodeAnimation_3rbp1")
-blend_point_4/pos = Vector2(3.7, 0)
-min_space = Vector2(-1.6, -1)
-max_space = Vector2(3.7, 1)
-
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6laxp"]
-graph_offset = Vector2(-708, 52)
-nodes/left_h_ctrl/node = SubResource("AnimationNodeBlendSpace2D_7ggs3")
-nodes/left_h_ctrl/position = Vector2(-120, 280)
+graph_offset = Vector2(-995.407, 131.159)
+nodes/left_h_bow/node = SubResource("AnimationNodeBlendSpace1D_mgslb")
+nodes/left_h_bow/position = Vector2(-120, 200)
+nodes/left_h_rot/node = SubResource("AnimationNodeBlendSpace1D_ichri")
+nodes/left_h_rot/position = Vector2(-120, 40)
 nodes/mix_both_wrists/node = SubResource("AnimationNodeAdd2_pi72s")
 nodes/mix_both_wrists/position = Vector2(200, 140)
 nodes/output/position = Vector2(800, 140)
-nodes/right_h_ctrl/node = SubResource("AnimationNodeBlendSpace2D_eokdn")
-nodes/right_h_ctrl/position = Vector2(-120, 100)
-node_connections = [&"output", 0, &"mix_both_wrists", &"mix_both_wrists", 0, &"right_h_ctrl", &"mix_both_wrists", 1, &"left_h_ctrl"]
+node_connections = [&"output", 0, &"mix_both_wrists", &"mix_both_wrists", 0, &"left_h_rot", &"mix_both_wrists", 1, &"left_h_bow"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr2xo"]
 albedo_texture = ExtResource("2_vxwx8")
@@ -520,8 +498,8 @@ bones/60/scale = Vector3(1, 1, 1)
 modification_stack = SubResource("SkeletonModificationStack3D_5osap")
 script = ExtResource("2_0ra0b")
 IK_Script_Active = 0
-bone_name = "upper_arm.R"
-get_bone_id = 31
+bone_name = ""
+get_bone_id = -1
 Node3D_Path = NodePath("IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Both_Arms_Complete/Left_Shoulder/Target_Left_Elbow/Target_Left_Hand")
 Bone_ID = 10
 
@@ -535,9 +513,9 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendTree_6laxp")
 anim_player = NodePath("../Anim_Hand_ctrl")
 active = true
-parameters/left_h_ctrl/blend_position = Vector2(0, 0)
+parameters/left_h_bow/blend_position = 0.0
+parameters/left_h_rot/blend_position = 0.0
 parameters/mix_both_wrists/add_amount = 1.0
-parameters/right_h_ctrl/blend_position = Vector2(0, 0)
 
 [node name="DummyHull" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="2"]
 transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, 0, 0)
@@ -710,12 +688,12 @@ sides = 4
 material = SubResource("StandardMaterial3D_ff1rf")
 
 [node name="Both_Arms_Complete" type="CSGBox3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL"]
-transform = Transform3D(1, -2.32831e-10, 6.51926e-09, 4.65661e-10, 1, 3.42727e-07, -4.65661e-10, 0, 1, -0.00113985, 0.615867, -0.00620694)
+transform = Transform3D(1, -2.32831e-10, 6.98492e-09, 5.82077e-10, 1, 3.57628e-07, -9.31323e-10, 0, 1, -0.00113985, 0.615867, -0.00620696)
 size = Vector3(0.735367, 0.00795129, 0.0342771)
 material = ExtResource("9_gsg0u")
 
 [node name="Left_Shoulder" type="CSGSphere3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Both_Arms_Complete"]
-transform = Transform3D(1, 1.86265e-09, 8.84756e-09, 4.65661e-10, 0.999999, 0, -6.51926e-09, 1.3411e-07, 1, 0.196856, -0.0153286, 0.00359069)
+transform = Transform3D(1, 1.62981e-09, 8.3819e-09, 2.32831e-10, 0.999999, 1.49012e-08, -6.0536e-09, 1.19209e-07, 1, 0.196856, -0.0153286, 0.00359069)
 radius = 0.0717153
 material = ExtResource("3_ie47r")
 
@@ -725,7 +703,7 @@ radius = 0.0524021
 material = ExtResource("2_yeyil")
 
 [node name="Target_Left_Hand" type="CSGSphere3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Both_Arms_Complete/Left_Shoulder/Target_Left_Elbow"]
-transform = Transform3D(-0.0439665, -0.938147, 0.343443, -0.995643, 0.0128582, -0.0923324, 0.0822071, -0.346005, -0.934622, -0.347184, -0.0582724, -0.0581446)
+transform = Transform3D(-0.0439667, -0.938147, 0.343443, -0.995643, 0.0128583, -0.0923324, 0.082207, -0.346005, -0.934623, -0.347184, -0.0582724, -0.0581442)
 radius = 0.0524021
 material = ExtResource("2_yeyil")
 
@@ -740,30 +718,30 @@ radius = 0.0524021
 material = ExtResource("2_yeyil")
 
 [node name="Target_Right_Hand" type="CSGSphere3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Both_Arms_Complete/Right_Shoulder/Target_Right_Elbow"]
-transform = Transform3D(1, 2.21189e-09, 2.32831e-09, -5.93718e-09, 1, -1.04308e-07, -3.72529e-09, 6.4075e-07, 1, -0.12887, -0.14544, 0.176574)
+transform = Transform3D(1, 2.67755e-09, 1.39698e-09, -6.17001e-09, 1, -1.04308e-07, -3.25963e-09, 6.4075e-07, 1, -0.12887, -0.14544, 0.176574)
 radius = 0.0524021
 material = ExtResource("2_yeyil")
 
 [node name="Attachm_LeftHand" type="BoneAttachment3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="4"]
-transform = Transform3D(-0.732115, 0.667315, -0.136736, -0.60966, -0.552371, 0.568503, 0.303843, 0.499573, 0.811234, 0.58958, 1.25948, 0.0863215)
+transform = Transform3D(-0.732115, 0.667315, -0.136737, -0.609661, -0.552371, 0.568503, 0.303842, 0.499573, 0.811234, 0.58958, 1.25948, 0.0863215)
 bone_name = "hand.L"
 bone_idx = 10
 
 [node name="Left_Arm_Hand_Rot_ctrl" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/Attachm_LeftHand"]
-transform = Transform3D(1, 0, -2.64697e-23, 0, 0.999999, 0, 2.64697e-23, 0, 1, 0, 0, 0)
+transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 inner_radius = 0.0397786
 outer_radius = 0.0563489
 material = ExtResource("3_ie47r")
 script = ExtResource("10_8cwru")
 
 [node name="Left_Hand_Bow_ctrl" type="CSGBox3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/Attachm_LeftHand/Left_Arm_Hand_Rot_ctrl"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -0.05, 0, 0)
+transform = Transform3D(1.00001, 0, 0, 0, 0.999987, 0, 0, 0, 0.999999, -0.05, 0, 0)
 size = Vector3(0.01, 0.05, 0.01)
 material = SubResource("StandardMaterial3D_oo120")
 script = ExtResource("11_7koey")
 
 [node name="Attachm_RightHand" type="BoneAttachment3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="5"]
-transform = Transform3D(-0.804487, -0.467734, 0.366093, 0.586198, -0.724596, 0.362392, 0.095766, 0.506142, 0.857114, -0.538479, 1.20792, 0.108814)
+transform = Transform3D(-0.804487, -0.467734, 0.366093, 0.586198, -0.724596, 0.362392, 0.0957667, 0.506142, 0.857114, -0.538479, 1.20792, 0.108814)
 bone_name = "hand.R"
 bone_idx = 33
 
