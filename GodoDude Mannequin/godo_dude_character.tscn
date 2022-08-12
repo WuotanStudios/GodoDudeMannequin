@@ -402,7 +402,7 @@ max_space = 1.6
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_pi72s"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6laxp"]
-graph_offset = Vector2(-243, -8)
+graph_offset = Vector2(-149, 32)
 nodes/left_h_bow/node = SubResource("AnimationNodeBlendSpace1D_mgslb")
 nodes/left_h_bow/position = Vector2(-120, 200)
 nodes/left_h_rot/node = SubResource("AnimationNodeBlendSpace1D_ichri")
@@ -649,7 +649,7 @@ material = SubResource("StandardMaterial3D_sooyp")
 metadata/_edit_lock_ = true
 
 [node name="Neck_Target_fixed_on_bone" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL"]
-transform = Transform3D(0.999679, 0.00138179, 0.0253003, 0.00831115, 0.925386, -0.378935, -0.0239361, 0.379024, 0.925077, -0.00202725, 0.665933, -0.0131101)
+transform = Transform3D(0.999679, 0.00138181, 0.0253003, 0.00831115, 0.925386, -0.378936, -0.0239361, 0.379025, 0.925077, -0.00202724, 0.665933, -0.01311)
 inner_radius = 0.0898079
 outer_radius = 0.139808
 material = SubResource("StandardMaterial3D_d7jda")
@@ -675,7 +675,7 @@ outer_radius = 0.0961753
 material = ExtResource("3_ie47r")
 
 [node name="UpperBody_look_at_target" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL"]
-transform = Transform3D(-0.00818261, -0.0876483, 0.39247, 0.990633, 0.135082, 0.00788922, -0.136313, 0.986951, 0.0337745, 0.0205031, 0.183867, 0.891559)
+transform = Transform3D(-0.00818262, -0.0876483, 0.39247, 0.990633, 0.135082, 0.00788922, -0.136313, 0.986951, 0.0337745, 0.0205031, 0.183867, 0.891559)
 inner_radius = 0.146855
 outer_radius = 0.26956
 sides = 4
@@ -694,7 +694,7 @@ size = Vector3(0.735367, 0.00795129, 0.0342771)
 material = ExtResource("9_gsg0u")
 
 [node name="Left_Shoulder" type="CSGSphere3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Both_Arms_Complete"]
-transform = Transform3D(1, 1.62981e-09, 8.3819e-09, 2.32831e-10, 0.999999, 1.49012e-08, -6.0536e-09, 1.19209e-07, 1, 0.196856, -0.0153286, 0.00359069)
+transform = Transform3D(1, 1.5134e-09, 7.91624e-09, 2.32831e-10, 0.999999, 2.98023e-08, -6.0536e-09, 1.04308e-07, 1, 0.196856, -0.0153286, 0.00359069)
 radius = 0.0717153
 material = ExtResource("3_ie47r")
 
@@ -724,7 +724,7 @@ radius = 0.0524021
 material = ExtResource("2_yeyil")
 
 [node name="Attachm_LeftHand" type="BoneAttachment3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="4"]
-transform = Transform3D(-0.732115, 0.667315, -0.136736, -0.60966, -0.552372, 0.568502, 0.303842, 0.499573, 0.811234, 0.58958, 1.25948, 0.0863214)
+transform = Transform3D(-0.732115, 0.667315, -0.136735, -0.60966, -0.552372, 0.568503, 0.303844, 0.499573, 0.811234, 0.58958, 1.25948, 0.0863214)
 bone_name = "hand.L"
 bone_idx = 10
 
@@ -742,7 +742,7 @@ material = SubResource("StandardMaterial3D_oo120")
 script = ExtResource("11_7koey")
 
 [node name="Attachm_RightHand" type="BoneAttachment3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="5"]
-transform = Transform3D(-0.804487, -0.467735, 0.366092, 0.586198, -0.724595, 0.362393, 0.0957654, 0.506142, 0.857114, -0.538479, 1.20792, 0.108814)
+transform = Transform3D(-0.804487, -0.467734, 0.366092, 0.586198, -0.724596, 0.362393, 0.0957652, 0.506142, 0.857115, -0.538479, 1.20792, 0.108814)
 bone_name = "hand.R"
 bone_idx = 33
 
