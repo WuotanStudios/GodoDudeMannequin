@@ -770,7 +770,7 @@ radius = 0.0717153
 material = ExtResource("3_ie47r")
 
 [node name="Target_Left_Elbow" type="CSGSphere3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL/Both_Arms_Complete/Left_Shoulder"]
-transform = Transform3D(0.649363, 0.758899, 0.0489988, -0.0675896, 0.12177, -0.990255, -0.757471, 0.639721, 0.130372, 0.21496, -0.189201, 0.222258)
+transform = Transform3D(-0.719185, 0.442485, -0.535702, 0.576454, -0.0504629, -0.815573, -0.387912, -0.895354, -0.218782, 0.216939, -0.22377, -0.0338527)
 radius = 0.0524021
 material = ExtResource("2_yeyil")
 
@@ -795,7 +795,7 @@ radius = 0.0524021
 material = ExtResource("2_yeyil")
 
 [node name="Attachm_LeftHand" type="BoneAttachment3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="3"]
-transform = Transform3D(-0.419189, -0.67652, -0.605473, -0.76532, -0.0954697, 0.636527, -0.488429, 0.730207, -0.477735, 0.197728, 1.42532, 0.376817)
+transform = Transform3D(-0.747865, 0.650988, -0.130039, -0.592125, -0.565576, 0.574027, 0.300139, 0.506295, 0.80844, 0.58958, 1.25948, 0.0863215)
 bone_name = "hand.L"
 bone_idx = 10
 
