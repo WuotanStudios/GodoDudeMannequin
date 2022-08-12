@@ -233,54 +233,6 @@ tracks/3/path = NodePath("..:forearm.R")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0, 1, 0.221592, -0.047748, -0.0684319, 0.971563)
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Attachm_RightHand/Right_Arm_Hand_Rot_ctrl/Right_Hand_Bow_ctrl:transfrom_y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Left_Arm_Hand_Rot_ctrl/Left_Hand_Bow_ctrl:transfrom_y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Left_Arm_Hand_Rot_ctrl:rotate_y")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Attachm_RightHand/Right_Arm_Hand_Rot_ctrl:rotate_y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_0u5nt"]
 resource_name = "left_hand_bow_backwards"
@@ -318,54 +270,6 @@ tracks/1/path = NodePath("..:forearm.L")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0.221592, 0.047748, 0.0684319, 0.971563)
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Attachm_RightHand/Right_Arm_Hand_Rot_ctrl/Right_Hand_Bow_ctrl:transfrom_y")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Left_Arm_Hand_Rot_ctrl/Left_Hand_Bow_ctrl:transfrom_y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Left_Arm_Hand_Rot_ctrl:rotate_y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Attachm_RightHand/Right_Arm_Hand_Rot_ctrl:rotate_y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
 [sub_resource type="Animation" id="Animation_ijb2y"]
 resource_name = "left_hand_rot_left"
@@ -522,16 +426,16 @@ rim_enabled = true
 animation = &"left_hand_normal_pose"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4cl2b"]
-animation = &"left_hand_bow_forward"
+animation = &"right_hand_bow_forward"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fr1sn"]
-animation = &"left_hand_bow_backwards"
+animation = &"right_hand_bow_backwards"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_acyja"]
-animation = &"left_hand_rot_left"
+animation = &"right_hand_rot_left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3rbp1"]
-animation = &"left_hand_rot_right"
+animation = &"right_hand_rot_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_eokdn"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_kuxod")
@@ -541,15 +445,17 @@ blend_point_1/pos = Vector2(0, 1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_fr1sn")
 blend_point_2/pos = Vector2(0, -0.9)
 blend_point_3/node = SubResource("AnimationNodeAnimation_acyja")
-blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/pos = Vector2(-1.6, 0)
 blend_point_4/node = SubResource("AnimationNodeAnimation_3rbp1")
-blend_point_4/pos = Vector2(1, 0)
+blend_point_4/pos = Vector2(3.7, 0)
+min_space = Vector2(-1.6, -1)
+max_space = Vector2(3.7, 1)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6laxp"]
-graph_offset = Vector2(-890, 61)
-nodes/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_eokdn")
-nodes/BlendSpace2D/position = Vector2(-120, 100)
-node_connections = [&"output", 0, &"BlendSpace2D"]
+graph_offset = Vector2(-598, 102)
+nodes/right_h_ctrl/node = SubResource("AnimationNodeBlendSpace2D_eokdn")
+nodes/right_h_ctrl/position = Vector2(-120, 100)
+node_connections = [&"output", 0, &"right_h_ctrl"]
 
 [node name="GodoDude_Character" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -566,10 +472,10 @@ bones/9/position = Vector3(1.91481e-06, 0.284489, -3.22432e-07)
 bones/9/rotation = Quaternion(0.221592, 0.047748, 0.0684319, 0.971563)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/position = Vector3(2.94916e-07, 0.267706, -3.25339e-07)
-bones/10/rotation = Quaternion(0.01191, -0.0141576, -0.0496766, 0.998594)
+bones/10/rotation = Quaternion(0.0119406, -0.00973205, -0.0386108, 0.999136)
 bones/10/scale = Vector3(1, 0.999999, 0.999998)
 bones/32/rotation = Quaternion(0.221592, -0.047748, -0.0684319, 0.971563)
-bones/33/rotation = Quaternion(0.0119406, 0.00973206, 0.0386109, 0.999136)
+bones/33/rotation = Quaternion(0.0125107, -0.00555424, 0.0195027, 0.999716)
 bones/33/scale = Vector3(1, 0.999998, 1)
 bones/60/enabled = false
 bones/60/position = Vector3(2.85305e-08, 0.110315, 5.30642e-09)
@@ -720,7 +626,7 @@ material = SubResource("StandardMaterial3D_sooyp")
 metadata/_edit_lock_ = true
 
 [node name="Neck_Target_fixed_on_bone" type="CSGTorus3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D/IK_Targets/Total_Upper_Body/Body_Main_Bone_ALL"]
-transform = Transform3D(0.999679, 0.0013818, 0.0253003, 0.00831115, 0.925386, -0.378936, -0.0239361, 0.379024, 0.925077, -0.00202724, 0.665933, -0.01311)
+transform = Transform3D(0.999679, 0.0013818, 0.0253003, 0.00831115, 0.925386, -0.378935, -0.0239361, 0.379024, 0.925077, -0.00202725, 0.665933, -0.0131101)
 inner_radius = 0.0898079
 outer_radius = 0.139808
 material = SubResource("StandardMaterial3D_d7jda")
@@ -795,7 +701,7 @@ radius = 0.0524021
 material = ExtResource("2_yeyil")
 
 [node name="Attachm_LeftHand" type="BoneAttachment3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="3"]
-transform = Transform3D(-0.747865, 0.650988, -0.130039, -0.592125, -0.565576, 0.574027, 0.300139, 0.506295, 0.80844, 0.58958, 1.25948, 0.0863215)
+transform = Transform3D(-0.732115, 0.667315, -0.136736, -0.60966, -0.552371, 0.568503, 0.303843, 0.499573, 0.811233, 0.58958, 1.25948, 0.0863215)
 bone_name = "hand.L"
 bone_idx = 10
 
@@ -812,14 +718,14 @@ size = Vector3(0.01, 0.05, 0.01)
 material = SubResource("StandardMaterial3D_oo120")
 script = ExtResource("11_7koey")
 
-[node name="Left_Hand_ctrl_Anim_Tree" type="AnimationTree" parent="GodoDude_Rigged_1/metarig/Skeleton3D/Attachm_LeftHand"]
+[node name="L_Hand_ctrl_Anim_Tree" type="AnimationTree" parent="GodoDude_Rigged_1/metarig/Skeleton3D/Attachm_LeftHand"]
 tree_root = SubResource("AnimationNodeBlendTree_6laxp")
 anim_player = NodePath("../../Anim_Hand_ctrl")
 active = true
-parameters/BlendSpace2D/blend_position = Vector2(-0.00341296, 0.0131004)
+parameters/right_h_ctrl/blend_position = Vector2(0.0055511, 0.00275481)
 
 [node name="Attachm_RightHand" type="BoneAttachment3D" parent="GodoDude_Rigged_1/metarig/Skeleton3D" index="4"]
-transform = Transform3D(-0.804487, -0.467735, 0.366092, 0.586198, -0.724595, 0.362393, 0.0957645, 0.506142, 0.857115, -0.538479, 1.20792, 0.108814)
+transform = Transform3D(-0.774456, -0.497506, 0.390772, 0.624168, -0.701569, 0.343817, 0.103103, 0.510178, 0.853864, -0.538479, 1.20792, 0.108814)
 bone_name = "hand.R"
 bone_idx = 33
 
@@ -836,5 +742,11 @@ size = Vector3(0.01, 0.05, 0.01)
 material = SubResource("StandardMaterial3D_oo120")
 script = ExtResource("11_7koey")
 invert = 1
+
+[node name="R_Hand_ctrl_Anim_Tree2" type="AnimationTree" parent="GodoDude_Rigged_1/metarig/Skeleton3D/Attachm_RightHand"]
+tree_root = SubResource("AnimationNodeBlendTree_6laxp")
+anim_player = NodePath("../../Anim_Hand_ctrl")
+active = true
+parameters/right_h_ctrl/blend_position = Vector2(-0.0154639, -0.0192838)
 
 [editable path="GodoDude_Rigged_1"]
