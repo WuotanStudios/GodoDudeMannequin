@@ -14,5 +14,5 @@ func _process(delta):
 		
 		
 		set_rotation(Vector3(rotate_x, rotate_y, rotate_z))
-		
+		set_position(Vector3(0,0,0))
 	else: pass
