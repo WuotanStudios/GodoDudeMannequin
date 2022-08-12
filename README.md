@@ -1,6 +1,10 @@
 # GodoDudeMannequin
 A Mannequin with a full body Rig and an IK made directly in Godot Engine 4
 
+![image](https://user-images.githubusercontent.com/101058770/184447215-9bedfd61-e19f-4cbe-b54e-01deff082418.png)
+
+
+
 For more infos follow me on Twitter: https://twitter.com/WuotanStudios
 or follow the project directly on Twitter: https://twitter.com/hashtag/GodoDudeMannequin?src=hashtag_click
 
