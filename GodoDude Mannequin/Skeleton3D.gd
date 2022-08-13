@@ -78,10 +78,10 @@ func _get_ctrl_data():
 	var ctrl_position : Vector3
 	
 	
-	var temp_ctrl_position_1 : Vector3 = $Attachm_LeftHand/Left_Arm_Hand_Rot_ctrl.get_rotation()
+	var temp_ctrl_position_1 : Vector3 = $Attachm_LeftHand/Reposition/Left_Arm_Hand_Rot_ctrl.get_rotation()
 	ctrl_position.x = temp_ctrl_position_1.y
 	
-	var temp_ctrl_position_2 : Vector3 = $Attachm_LeftHand/Left_Arm_Hand_Rot_ctrl/Left_Hand_Bow_ctrl.get_position() *10
+	var temp_ctrl_position_2 : Vector3 = $Attachm_LeftHand/Reposition/Left_Arm_Hand_Rot_ctrl/Left_Hand_Bow_ctrl.get_position() *10
 	ctrl_position.y = temp_ctrl_position_2.y
 	ctrl_position.z = 0
 	_set_blend2d_by_ctrl_data(ctrl_position)
