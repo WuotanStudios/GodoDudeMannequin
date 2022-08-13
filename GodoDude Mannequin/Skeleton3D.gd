@@ -75,21 +75,35 @@ func _get_Bone_data_and_assign_to_target(target_bone_ID, Object_to_adjust):
 
 func _get_ctrl_data():
 	var controller_id
-	var ctrl_position : Vector3
-	
-	
+	var ctrl_position_1 : Vector3
 	var temp_ctrl_position_1 : Vector3 = $Attachm_LeftHand/Reposition/Left_Arm_Hand_Rot_ctrl.get_rotation()
-	ctrl_position.x = temp_ctrl_position_1.y
-	
+	ctrl_position_1.x = temp_ctrl_position_1.y
 	var temp_ctrl_position_2 : Vector3 = $Attachm_LeftHand/Reposition/Left_Arm_Hand_Rot_ctrl/Left_Hand_Bow_ctrl.get_position() *10
-	ctrl_position.y = temp_ctrl_position_2.y
-	ctrl_position.z = 0
-	_set_blend2d_by_ctrl_data(ctrl_position)
+	ctrl_position_1.y = temp_ctrl_position_2.y
+	ctrl_position_1.z = 0
+	_set_blend2d_by_ctrl_data_left_wrist(ctrl_position_1)
+	
+	
+	var ctrl_position_2 : Vector3
+	var temp_ctrl_position_3 : Vector3 = $Attachm_RightHand/Reposition/Right_Arm_Hand_Rot_ctrl.get_rotation()
+	ctrl_position_2.x = temp_ctrl_position_3.y
+	var temp_ctrl_position_4 : Vector3 = $Attachm_RightHand/Reposition/Right_Arm_Hand_Rot_ctrl/Right_Hand_Bow_ctrl.get_position() *10
+	ctrl_position_2.y = temp_ctrl_position_4.y
+	ctrl_position_2.z = 0
+	_set_blend2d_by_ctrl_data_right_wrist(ctrl_position_2)
 
 
 
 
-func _set_blend2d_by_ctrl_data(ctrl_position : Vector3):
-	$L_Hand_ctrl_Anim_Tree.set("parameters/left_h_rot/blend_position", ctrl_position.x)
-	$L_Hand_ctrl_Anim_Tree.set("parameters/left_h_bow/blend_position", ctrl_position.y)
+
+
+
+func _set_blend2d_by_ctrl_data_left_wrist(ctrl_position : Vector3):
+	$Hand_ctrl_Anim_Tree.set("parameters/left_h_rot/blend_position", ctrl_position.x)
+	$Hand_ctrl_Anim_Tree.set("parameters/left_h_bow/blend_position", ctrl_position.y)
+
+
+func _set_blend2d_by_ctrl_data_right_wrist(ctrl_position : Vector3):
+	$Hand_ctrl_Anim_Tree.set("parameters/right_h_rot/blend_position", ctrl_position.x)
+	$Hand_ctrl_Anim_Tree.set("parameters/right_h_bow/blend_position", ctrl_position.y)
 
