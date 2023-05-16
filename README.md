@@ -19,3 +19,8 @@ If you want to support this project by a donation, :-) please buy me a coffee he
 or buy one of my other projects here: https://wuotanstudios.itch.io/
 
 
+
+
+16.05.2023:
+Sadly, the IK System ind Godot 4.0 release Version is broken.
+I'll wait with doing an update until there is a working system again in Godot 4,... hopefully in version 4.2+
